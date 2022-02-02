@@ -23,7 +23,7 @@ main {
 
 section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -63,9 +63,9 @@ section {
     transform: rotateY(180deg);
 }
 
-.escondido {
+/* .escondido {
     display: none;
-}
+} */
 
 @media (max-width: 614px) {
 
