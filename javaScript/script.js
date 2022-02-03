@@ -50,7 +50,7 @@ function iniciarJogo() {
 
 function virarCarta(carta) {
 
-    carta.classList.toggle('virada');
+    carta.classList.add('virada');
     let cardVerso = carta.querySelector('.verso');
     let cardFrente = carta.querySelector('.frente');
     cardVerso.classList.remove('escondido');    
