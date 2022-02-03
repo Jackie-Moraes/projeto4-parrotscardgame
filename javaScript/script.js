@@ -19,12 +19,18 @@ let numeroCartasEmJogo = 0;
 
 let contS = 00;
 let contM = 0;
+let intervalo = null;
 
 iniciarJogo()
 
 
 // Contador de tempo
-setInterval(() => {
+
+
+intervalo = setInterval(relogio, 1000);
+
+
+function relogio() {
     contS += 1;
     if (contS === 60) {
         contM += 1;
@@ -36,7 +42,7 @@ setInterval(() => {
     }
     
     document.querySelector('.segundos').innerHTML = contS;
-}, 1000);
+}
 
 
 function iniciarJogo() {
@@ -132,6 +138,7 @@ function verificarFim() {
     
     setTimeout( () => {
         if (qntMatches == numeroCartasEmJogo) {
+            clearInterval(intervalo);
             alert (`Você conseguiu em ${tentativas} tentativas, levando ${contM} minutos e ${contS} segundos!`)
             let novamente = prompt("Gostaria de jogar novamente? (Responda com y/Y se sim)")
             if(novamente === "y" || novamente === "Y") {
