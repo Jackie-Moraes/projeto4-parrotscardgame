@@ -52,20 +52,24 @@ section {
     align-items: center;
     justify-content: center;
     position: absolute;
-    backface-visibility: hidden;
 }
 
 .verso  {
     transform: rotateY(180deg);
 }
 
+.verso img {
+    width: 100px;
+    height: 100px;
+}
+
 .card.virada {
     transform: rotateY(180deg);
 }
 
-/* .escondido {
+.escondido {
     display: none;
-} */
+}
 
 @media (max-width: 614px) {
 
