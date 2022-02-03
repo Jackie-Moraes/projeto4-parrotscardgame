@@ -114,6 +114,17 @@ function verificarFim() {
     setTimeout( () => {
         if (qntMatches == numeroCartasEmJogo) {
             alert (`Você conseguiu em ${tentativas} tentativas!`)
+            let novamente = prompt("Gostaria de jogar novamente? (Responda com y/Y se sim)")
+            if(novamente === "y" || novamente === "Y") {
+                document.querySelector('section').innerHTML = "";
+                qntCartas = 0;
+                tentativas = 0;
+                conteudo = "";
+                qntMatches = 0;
+                cartasEmJogo = [];
+                numeroCartasEmJogo = 0;
+                iniciarJogo();
+            }
         }
     }, 500)
 }
