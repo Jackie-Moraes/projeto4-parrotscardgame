@@ -61,6 +61,7 @@ function virarCarta(carta) {
     let cardFrente = carta.querySelector('.frente');
     cardVerso.classList.remove('escondido');    
     cardFrente.classList.add('escondido');
+    carta.removeAttribute('onclick');
 
     matchCartas.push(carta);
     verificarCartas();
@@ -87,7 +88,7 @@ function distribuirCartasEmJogo(cartasEmJogo) {
 
     for (let i = 0; i < qntCartas; i++) {
         conteudo +=
-        `<div class="card" onclick="virarCarta(this)" data-identifier="card">
+        `<div class="card" onclick="virarCarta(this)" id="${i}" data-identifier="card">
             <div class="frente face" data-identifier="front-face">
                 <img src="images/front.png" alt="Papagaio">
             </div>
@@ -125,6 +126,8 @@ function verificarCartas() {
             segundoCardVerso.classList.add('escondido')
             matchCartas[0].classList.toggle('virada');
             matchCartas[1].classList.toggle('virada');
+            matchCartas[0].setAttribute('onclick', 'virarCarta(this)');
+            matchCartas[1].setAttribute('onclick', 'virarCarta(this)');
             matchCartas.splice(0);
             matchCartas.splice(1);
         }, 1000)
