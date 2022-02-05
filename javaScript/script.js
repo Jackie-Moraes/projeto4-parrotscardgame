@@ -56,16 +56,19 @@ function iniciarJogo() {
 
 function virarCarta(carta) {
 
-    carta.classList.add('virada');
-    let cardVerso = carta.querySelector('.verso');
-    let cardFrente = carta.querySelector('.frente');
-    cardVerso.classList.remove('escondido');    
-    cardFrente.classList.add('escondido');
-    carta.removeAttribute('onclick');
-
-    matchCartas.push(carta);
-    verificarCartas();
-    tentativas++;
+    if (matchCartas[0] === undefined || matchCartas[1] === undefined) {
+        carta.classList.add('virada');
+        let cardVerso = carta.querySelector('.verso');
+        let cardFrente = carta.querySelector('.frente');
+        cardVerso.classList.remove('escondido');    
+        cardFrente.classList.add('escondido');
+        carta.removeAttribute('onclick');
+    
+        matchCartas.push(carta);
+        verificarCartas();
+        tentativas++;
+    }
+    
 
 }
 
