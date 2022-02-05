@@ -158,6 +158,7 @@ function verificarFim() {
                 contS = 0;
                 contM = 0;
                 iniciarJogo();
+                intervalo = setInterval(relogio, 1000);
             }
         }
     }, 500)
